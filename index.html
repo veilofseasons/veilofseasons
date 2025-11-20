@@ -1,1 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>hi</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
 
+    .square {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 1;
+    }
+
+    .glowing-text {
+      font-size: 20px;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      color: transparent;
+      background-image: linear-gradient(to right, #ffffff, #fffef7);
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: glowing 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowing {
+      from {
+        text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgba(255, 130, 27, 0.671), 0 0 30px #ff8e5900;
+      }
+      to {
+        text-shadow: 0 0 20px rgba(206, 5, 5, 0.986)0 0 30px rgba(238, 153, 138, 0.342), 0 0 40px #f1d42d;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navigation">
+    <div class="nav-container">
+      <a href="#" class="logo">TGCF | 天官赐福</a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#characters">Characters</a></li>
+        <li><a href="#top">|</a></li>
+        <li><a href="#Shop">Creator</a></li>
+        <li><a href="#community">Community</a></li>
+      </ul>
+      <div class="line"></div>
+    </div>
+  </nav>
+
+  <div class="square">
+    <div class="glowing-text">
+      <h2>Tiān Guān Cì Fú | 天官赐福</h2>
+      <p>A Chinese web novel written by Mo Xiang Tong Xiu. It was first published in 2017. On August 4th, 2021, the official English translation and physical copy were announced by Seven Seas Entertainment. The English version will be split into 8 volumes with the final one releasing in March 2023.</p>
+    </div>
+  </div>
+  
+  <script>
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const line = document.querySelector('.line');
+
+    function updateLine(link) {
+      line.style.left = link.offsetLeft + 'px';
+      line.style.width = link.offsetWidth + 'px';
+    }
+
+    navLinks.forEach(link => {
+      link.addEventListener('mouseover', function() {
+        updateLine(this);
+      });
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        updateLine(this);
+      });
+    });
+
+    window.addEventListener('resize', function() {
+      const activeLink = document.querySelector('.nav-links a.active');
+      if (activeLink) {
+        updateLine(activeLink);
+      }
+    });
+    
+    
+  </script>
+</body>
+</html>
