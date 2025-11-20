@@ -14,5 +14,5 @@
   </a>
 </div>
 
-<h1 align="center">🌻</h1>
+<h1 align="center">paboritong panalangin ko'y ikaw 🌻</h1>
 ART CRED: @_Morick
