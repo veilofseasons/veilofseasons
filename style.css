@@ -1,1 +1,86 @@
+/* Existing styles for body and navigation */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url(https://64.media.tumblr.com/039610b79beea9acbee5c5a6a1f593cd/61348026a5526681-07/s2048x3072/c6fa4c09e5cdf67252e88752ee32921b3d7fa8c2.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  overflow: hidden;
+}
 
+.navigation {
+  background-color: rgba(41, 44, 49, 0.9);
+  color: #fff;
+  padding: 10px 20px;
+}
+  
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  
+.logo {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 24px;
+}
+  
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+  
+.nav-links li {
+  display: inline-block;
+  margin-right: 20px;
+  position: relative;
+}
+  
+.nav-links li:last-child {
+  margin-right: 0;
+}
+  
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  position: relative;
+}
+  
+.nav-links li a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  bottom: -3px;
+  left: 0;
+  transition: transform 0.3s ease;
+  transform-origin: bottom right;
+  transform: scaleX(0);
+}
+  
+.nav-links li a:hover::before,
+.nav-links li a.active::before {
+  background-color: #ffc300;
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
+  
+.nav-links li a:hover {
+  color: #ffc300;
+  text-shadow: 0 0 8px #ffc300, 0 0 16px #ffc300;
+}
+
+
+.square-content {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+}
